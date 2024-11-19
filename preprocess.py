@@ -1,16 +1,6 @@
 import pandas as pd
 
 def preprocess_by_class(data: pd.DataFrame, class_type: str) -> pd.DataFrame:
-    """
-    Preprocess data based on the class type.
-    
-    Args:
-        data (pd.DataFrame): The raw DataFrame.
-        class_type (str): The class type to filter and preprocess (e.g., 'act', 'circular').
-        
-    Returns:
-        pd.DataFrame: Preprocessed DataFrame filtered by class type.
-    """
     # Filter rows by the given class type
     filtered_data = data[data['class'] == class_type]
     
@@ -25,16 +15,7 @@ def preprocess_by_class(data: pd.DataFrame, class_type: str) -> pd.DataFrame:
 
 
 def preprocess_data(input_file: str, output_file: str):
-    """
-    Preprocess the entire dataset based on the 'class' column.
-    
-    Args:
-        input_file (str): Path to the input CSV file.
-        output_file (str): Path to save the preprocessed CSV file.
-    
-    Returns:
-        pd.DataFrame: Combined preprocessed DataFrame.
-    """
+
     # Load the raw data
     raw_data = pd.read_csv(input_file)
     
