@@ -4,10 +4,17 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 from typing import List
 from langchain_core.documents import Document
+from dotenv import load_dotenv
 import os
 
+# Load environment variables from the .env file
+load_dotenv()
+
+# Access the API key from the environment
+api_key = os.getenv("OPENAI_API_KEY")
+
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200, length_function=len)
-embedding_function = OpenAIEmbeddings()
+embedding_function = OpenAIEmbeddings(api_key=api_key)
 vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=embedding_function)
 
 def load_and_split_document(file_path: str) -> List[Document]:
