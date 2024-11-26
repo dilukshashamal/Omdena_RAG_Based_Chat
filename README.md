@@ -15,7 +15,7 @@ The application includes the following features:
 
 ---
 
-## **Setup Instructions**
+## **API Setup Instructions**
 
 ### **Clone the Repository**
 ```bash
@@ -47,6 +47,18 @@ Start the FastAPI application:
 
 ```bash
 python main.py
+```
+
+## **APP Setup Instructions**
+
+### **Change Directory**
+```bash
+cd Omdena_RAG_Based_Chat/app
+```
+### **Run the Application**
+
+```bash
+python streamlit_app.py
 ```
 
 ## **Functions**
